@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.header-container{
+    background-color: rgb(220, 40, 40);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+
+.btn{
+    display: none;
+}
+
+.btn-label{
+    color: rgb(240, 240, 240);
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .17rem;
+    padding-left: .75rem;
+    display: none;
+}
+
+nav{
+    background-color: rgb(220, 40, 40);
+    position: fixed;
+    width: 100%;
+}
+
+.nav__li{
+    display: inline-block;
+    margin: 0.75rem;
+}
+
+.nav__li a{
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+
+.nav__li i{
+    padding: 0.25rem;
+}
+
+.nav__li:hover > a, .nav__li:hover > i,
+.nav__li:focus > a, .nav__li:focus > i{
+    color: rgb(60, 60, 60)!important;
+    cursor: pointer;
+}
+
+.body-container{
+    margin-top: 3rem;
+}
+
+
+@media (max-width: 538px) {
+
+    nav{
+        display: none;
+    }
+
+    .nav__ul{
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .nav__li{
+        width: 150px;
+    }
+
+    .btn-label{
+        display: block;
+        flex-grow: 100%;
+        width: 100%;
+        align-items: center;
+        background-color: rgb(220, 40, 40);
+        order: 1;
+    }
+
+    .btn-label span{
+        width: 100%;
+    }
+
+    .btn:checked ~ nav{
+        margin-top: 3rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-basis: 15%;
+    }
+
+    .btn-label:hover, .btn-label:focus{
+        color: rgb(60, 60, 60);
+        cursor: pointer;
+    }
+
+    .btn:not(:checked) ~ .btn-label{
+        color: rgb(240, 240, 240);
+    }
+}
