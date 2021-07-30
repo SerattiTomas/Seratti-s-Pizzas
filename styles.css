@@ -13,6 +13,7 @@
     left: 0;
     width: 100%;
     display: flex;
+    z-index: 10000;
 }
 
 .btn{
@@ -36,6 +37,13 @@ nav{
     width: 100%;
 }
 
+.nav__ul{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    margin-left: 2rem;
+}
+
 .nav__li{
     display: inline-block;
     margin: 0.75rem;
@@ -44,6 +52,7 @@ nav{
 .nav__li a{
     text-decoration: none;
     color: rgb(240, 240, 240);
+    font-weight: bold;
 }
 
 
@@ -53,7 +62,7 @@ nav{
 
 .nav__li:hover > a, .nav__li:hover > i,
 .nav__li:focus > a, .nav__li:focus > i{
-    color: rgb(60, 60, 60)!important;
+    color: rgb(40,40,40);
     cursor: pointer;
 }
 
@@ -61,8 +70,165 @@ nav{
     margin-top: 3rem;
 }
 
+.body-container .img{
+    background-image: url(foto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
 
-@media (max-width: 538px) {
+.img::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.6;
+}
+
+.img .texto{
+    height: 100%;
+    width: 100%;
+    padding-top: 12em;
+    position: relative;
+}
+
+.img .texto h1{
+    color: white;
+    text-transform: uppercase;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.img .texto p{
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.locales-container{
+    margin-bottom: 5rem;
+}
+
+.locales-container h1{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.locales{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta{
+    height: 15rem;
+    width: 15rem;
+    background-image: url(https://www.silviocicchi.com/pizzachef/wp-content/uploads/2015/06/pizzeria2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 2rem 3rem;
+    border-radius: 5%;
+    transition: transform 300ms ease-in-out;
+    position: relative;
+    box-shadow: 0 5px 15px rgb(40,40,40);
+}
+
+.tarjeta:nth-child(2){
+    background-image: url(https://www.silviocicchi.com/pizzachef/wp-content/uploads/2015/06/pizzeria1.jpg);
+}
+
+.tarjeta:last-child{
+    background-image: url(https://www.infogastronomica.com.ar/wp-content/uploads/2020/04/a-72.jpg);
+}
+
+.tarjeta::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 5%;
+}
+
+.tarjeta:hover, .tarjeta:focus{
+    transform: scale(110%);
+}
+
+.tarjeta:hover a, .tarjeta:focus a{
+    display: inline-block;
+}
+
+.tarjeta:hover::before, .tarjeta:focus::before{
+    background-color: black;
+    opacity: 0.4;
+}
+
+.tarjeta a{
+    text-decoration: none;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 11rem;
+    left: 1rem;
+}
+
+.redes-container{
+    text-align: center;
+    font-size: 1rem;
+    margin: 2rem 0;
+}
+
+.redes-container h1{
+    margin: 1rem
+}
+
+.redes-container .redes{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    height: 6rem;
+    width: 100%;
+    flex-basis: 50;
+}
+
+.redes .ico{
+    height: 10rem;
+    width: 10rem;
+}
+
+.redes a{
+    font-size: 5rem;
+    color: rgb(40,40,40);
+    margin: 2rem 0rem;
+}
+
+.redes i{
+    transition: transform 200ms ease-in-out;
+}
+
+.redes a:hover i{
+    transform: scale(130%);
+}
+
+footer{
+    background-color: rgb(20,20,20);
+    font-size: 1rem;
+    color: white;
+    padding: .5rem;
+    text-align-last: center;
+}
+
+
+@media screen and (max-width: 600px) {
 
     nav{
         display: none;
@@ -70,7 +236,7 @@ nav{
 
     .nav__ul{
         flex-direction: column;
-        flex-grow: 1;
+        margin-left: 0;
     }
 
     .nav__li{
@@ -100,7 +266,7 @@ nav{
     }
 
     .btn-label:hover, .btn-label:focus{
-        color: rgb(60, 60, 60);
+        color: rgb(40,40,40)!important;
         cursor: pointer;
     }
 
