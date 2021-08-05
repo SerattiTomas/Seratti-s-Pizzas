@@ -6,6 +6,11 @@
     font-weight: 100;
 }
 
+html{
+    min-height: 100%;
+    position: relative;
+}
+
 .header-container{
     background-color: rgb(220, 40, 40);
     position: fixed;
@@ -14,6 +19,23 @@
     width: 100%;
     display: flex;
     z-index: 10000;
+}
+
+footer{
+    background-color: rgb(40,40,40);
+    font-size: 1rem;
+    color: rgb(240, 240, 240);
+    padding: .5rem;
+    text-align-last: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.body-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn{
@@ -66,11 +88,9 @@ nav{
     cursor: pointer;
 }
 
-.body-container{
-    margin-top: 3rem;
-}
+/**************************************************HOME*****************************************/
 
-.img::before{
+.body-container .img::before{
     content: "";
     position: absolute;
     background-color: black;
@@ -91,28 +111,28 @@ nav{
     position: relative;
 }
 
-.img .texto{
+.body-container .img .texto{
     height: 100%;
     width: 100%;
     position: absolute;
     top: 35%;
 }
 
-.img .texto h1{
+.body-container .img .texto h1{
     color: rgb(240, 240, 240);
     text-transform: uppercase;
     font-size: 5rem;
     text-align: center;
 }
 
-.img .texto p{
+.body-container .img .texto p{
     color: rgb(240, 240, 240);
     font-size: 1.7rem;
     text-align: center;
 }
 
 .locales-container{
-    margin-bottom: 5rem;
+    margin: 4rem 0;
 }
 
 .locales-container h1{
@@ -185,7 +205,7 @@ nav{
     padding: 2rem;
     text-align: center;
     font-size: 1rem;
-    margin: 2rem 0;
+    margin: 2rem 0 4rem 0;
     background-color: rgb(40,40,40);
 }
 
@@ -237,6 +257,8 @@ nav{
     margin-right: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
 }
 
 .trabaja-div{
@@ -293,13 +315,78 @@ nav{
     cursor: pointer;
 }
 
-footer{
+
+/************************************************ABOUT US***********************************************/
+
+.about-container{
     background-color: rgb(40,40,40);
-    font-size: 1rem;
-    color: rgb(240, 240, 240);
-    padding: .5rem;
-    text-align-last: center;
+    display: flex;
 }
+
+.quienes-container{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+}
+
+.quienes-texto{
+    flex: 2;
+    padding-right: 1rem;
+}
+
+.quienes-texto h1{
+    color: rgb(240, 240, 240);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.quienes-texto p{
+    color: rgb(240, 240, 240);
+    font-size: 1.25rem;
+}
+
+.quienes-img{
+    flex: 1;
+}
+
+.quienes-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.historia-container{
+    display: flex;
+    background-color: rgb(40,40,40);
+}
+
+.historia-img{
+    flex: 1;
+}
+
+.historia-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.historia-texto{
+    flex: 2;
+    padding: 2rem;
+}
+
+.historia-texto h1{
+    color: rgb(240, 240, 240);
+    font-size: 2rem;
+}
+
+.historia-texto p{
+    color: rgb(240, 240, 240);
+    font-size: 1rem;
+}
+
+
+/**********************************************RESPONSIVE***********************************************/
 
 @media screen and (max-width: 600px) {
 
@@ -347,10 +434,13 @@ footer{
         color: rgb(240, 240, 240);
     }
 
+    .trabaja{
+        margin: 2rem 0 0 0;
+    }
+
     .trabaja-div{
         display: flex;
         flex-direction: column;
-        flex: 1;
     }
 
     .trabaja-div p{
