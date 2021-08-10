@@ -36,7 +36,7 @@ footer{
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    background-color: rgb(240, 240, 240)
+    background-color: rgb(240, 240, 240);
 }
 
 .btn{
@@ -413,7 +413,7 @@ nav{
 
 .contact-container{
     height: 100%;
-    width: 95%;
+    width: 100%;
     display: flex;
     margin: auto;
 }
@@ -468,6 +468,7 @@ nav{
     color:rgb(240, 240, 240);
     margin-left: auto;
     margin-right: auto;
+    height: 3rem;
 }
 
 .contact-input-containerv .submit:focus, .contact-input-container .submit:hover{
@@ -485,7 +486,7 @@ nav{
 
 
 /**********************************************RESPONSIVE***********************************************/
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 601px) and (max-width: 1250px) {
     .quienes-container, .historia-container{
         flex-direction: column;
     }
@@ -555,15 +556,20 @@ nav{
     }
 
     .quienes-container, .historia-container{
-        padding: 1.5rem
+        padding: 1.5rem;
+        flex-direction: column;
     }
 
     .quienes-container .quienes-img{
         margin-top: 1.5rem;
+        flex: unset;
+        height: 20rem;
     }
 
     .historia-container .historia-img{
         margin-bottom: 1.5rem;
+        flex: unset;
+        height: 20rem;
     }
 
     .contact-container{
