@@ -144,7 +144,7 @@ nav{
 }
 
 
-.locales-container h1{
+.locales-container h2{
     font-weight: bold;
     text-align: center;
     font-size: 2rem;
@@ -221,7 +221,8 @@ nav{
     background-color: rgb(40,40,40);
 }
 
-.redes-container h1{
+.redes-container h2{
+    font-size: 2rem;
     font-weight: bold;
     margin: 1rem;
     z-index: 10;
@@ -264,7 +265,8 @@ nav{
     flex-direction: column;
 }
 
-.trabaja-container h1{
+.trabaja-container h2{
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -346,7 +348,8 @@ nav{
 .quienes-container{
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem;
+    padding: 3rem;
+    margin-top: 0rem;
     line-height: 2.5rem;
 }
 
@@ -355,11 +358,12 @@ nav{
     padding-right: 2rem;
 }
 
-.quienes-texto h1{
+.quienes-texto h2{
     color: rgb(240, 240, 240);
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     font-weight: bold;
+    line-height: 3.5rem;
 }
 
 .quienes-texto p{
@@ -378,9 +382,10 @@ nav{
 .historia-container{
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem;
+    padding: 3rem;
     line-height: 2.5rem;
     background-color: rgb(240, 240, 240);
+    margin-bottom: 2rem;
 }
 
 .historia-texto{
@@ -389,11 +394,12 @@ nav{
     color: rgb(0,0,0);
 }
 
-.historia-texto h1{
+.historia-texto h2{
     text-align: end;
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     font-weight: bold;
+    line-height: 3.5rem;
 }
 
 .historia-texto p{
@@ -405,90 +411,91 @@ nav{
     background-image: url(https://revistaempleo.com/wp-content/uploads/2018/08/ayudante2Bpizzero-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: 30%;
     border: 2px solid rgb(40,40,40);
 }
 
 /******************************************************************CONTACTO*****************************************************************/
 
+.contacto-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+}
 
-.contact-container{
+.contacto-columna{
+    flex: 2;
     height: 100%;
     width: 100%;
-    display: flex;
-    margin: auto;
+    margin-right: auto;
 }
 
-.contact-consulta{
-    width: 100%;
-    min-width: 350px;
-    margin-right: 2rem;
-}
-
-.contact-text{
-    color:rgb(0,0,0);
+.contacto-texto{
     margin-bottom: 2rem;
-    font-weight: bolder;
 }
 
-.contact-text h1{
-    font-size: 2rem;
-}
-
-.contact-input-container{
+.contacto-inputs-container{
     display: flex;
     flex-direction: column;
 }
 
-.contact-input{
-    height: 3rem;
-    padding-left: .25rem;
-    width: 100%;
-    min-height: 2rem;
+.contacto-input{
+    padding: 0.5rem;
     background: transparent;
     border: none;
     border-bottom: 2px solid rgb(220, 40, 40);
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    min-width: 350px;
 }
 
-.contact-input:focus, .contact-input-container .submit:hover{
+.contacto-input:focus{
     background: linear-gradient(rgb(240, 240, 240), rgb(200,200,200));
     outline: none;
 }
 
-.contact-input-container textarea{
+.contacto-inputs-container textarea{
     resize: none;
-    min-height: 10rem;
+    height: 10rem;
 }
 
-.contact-input-container .submit{
+.contacto-submit{
     background-color: rgb(220, 40, 40);
     width: 10rem;
+    height: 2.5rem;
     border-radius: 15px;
     border: none;
     color:rgb(240, 240, 240);
-    margin-left: auto;
-    margin-right: auto;
-    height: 3rem;
+    margin-top: 2rem;
+    align-self: center;
 }
 
-.contact-input-containerv .submit:focus, .contact-input-container .submit:hover{
+.contacto-submit:focus, .contacto-submit:hover{
     background: linear-gradient(rgb(220, 40, 40), rgb(150, 0, 0));
     cursor: pointer;
 }
 
-.contact-img{
-    object-fit: contain;
-    background-image: url(https://www.pinclipart.com/picdir/big/21-218594_-imagenes-de-comer-pizza-animadas-clipart.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    min-width: 350px;
+.contacto-img{
+    margin-top: -5rem;
+    align-self: center;
 }
 
-
 /**********************************************RESPONSIVE***********************************************/
-@media screen and (min-width: 601px) and (max-width: 1250px) {
+@media screen and (min-width: 601px) and (max-width: 1000px) {
     .quienes-container, .historia-container{
         flex-direction: column;
+    }
+    .historia-container{
+        flex-direction: column-reverse;
+    }
+
+    .quienes-texto{
+        padding-right: 0rem;
+    }
+
+    .historia-texto{
+        padding-right: 0rem;
+        padding-left: 0rem;
     }
 
     .quienes-container .quienes-img, .historia-container .historia-img{
@@ -501,7 +508,7 @@ nav{
     }
 
     .historia-container .historia-img{
-        margin-bottom: 5rem;
+        margin-top: 2rem;
     }
 }
 
@@ -539,12 +546,15 @@ nav{
     }
 
     .btn-label:hover, .btn-label:focus{
-        color: rgb(40,40,40)!important;
         cursor: pointer;
     }
 
     .btn:not(:checked) ~ .btn-label{
         color: rgb(240, 240, 240);
+    }
+
+    .redes a:hover i{
+        transform: scale(100%);
     }
 
     .trabaja-div input{
@@ -560,6 +570,19 @@ nav{
         flex-direction: column;
     }
 
+    .quienes-texto{
+        padding-right: 0rem;
+    }
+
+    .historia-texto{
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+
+    .historia-container{
+        flex-direction: column-reverse;
+    }
+
     .quienes-container .quienes-img{
         margin-top: 1.5rem;
         flex: unset;
@@ -567,17 +590,21 @@ nav{
     }
 
     .historia-container .historia-img{
-        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
         flex: unset;
         height: 20rem;
     }
 
-    .contact-container{
+    .contacto-container{
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
-    .contact-input-container{
-        max-width: 400px;
+    .contacto-input{
+        min-width: unset;
+    }
+
+    .contacto-img{
+        margin-top: 2rem;
     }
 }
