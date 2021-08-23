@@ -37,6 +37,7 @@ footer{
     display: flex;
     flex-direction: column;
     background-color: rgb(240, 240, 240);
+    overflow-x: hidden;
 }
 
 .btn{
@@ -92,7 +93,7 @@ nav{
     cursor: pointer;
 }
 
-/********************************************************************HOME*******************************************************************/
+/*========================================================         HOME          =========================================================*/
 .body-container .img-index::before{
     content: "";
     position: absolute;
@@ -337,7 +338,7 @@ nav{
 }
 
 
-/******************************************************************ABOUT US*****************************************************************/
+/*======================================================         ABOUT US          =======================================================*/
 
 .about-container{
     background-color: rgb(40,40,40);
@@ -415,11 +416,12 @@ nav{
     border: 2px solid rgb(40,40,40);
 }
 
-/******************************************************************CONTACTO*****************************************************************/
+/*======================================================         CONTACTO          =======================================================*/
 
 .contacto-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 4rem 2rem;
 }
 
@@ -427,7 +429,8 @@ nav{
     flex: 2;
     height: 100%;
     width: 100%;
-    margin-right: auto;
+    max-width: 750px;
+    min-width: 450px;
 }
 
 .contacto-texto{
@@ -476,11 +479,10 @@ nav{
 }
 
 .contacto-img{
-    margin-top: -5rem;
     align-self: center;
 }
 
-/********************************************************************PRODUCTOS**************************************************************/
+/*======================================================        PRODUCTOS       =========================================================*/
 
 .productos-container:last-child{
     margin-bottom: 2rem;
@@ -575,11 +577,17 @@ nav{
     font-size: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-right: 5rem;
+}
+
+.banner .banner-logo{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
 }
 
 .banner h2{
     color: rgb(240, 240, 240);
-    margin-left: auto;
     font-weight: bold;
     font-size: 2rem;
     margin-right: .5rem;
@@ -603,7 +611,7 @@ nav{
 }
 
 .productos-fila-1 .producto:nth-child(3){
-    background-image: url(https://lh3.googleusercontent.com/proxy/pzUkLjgN1eKLu8y4y3NHECUcI1eTTN5UWoD7JKAR4p_c1Jl90u99-KxNrDwuiHgTO3mlY-_HUabArxZ7TWEnd4USG-sg6ZizR8jKUXTlQqStFVnb03jqX2Zheph5i7s9CrMgMrMRPPbK);
+    background-image: url(https://locosxlaparrilla.com/wp-content/uploads/2015/02/Receta-recetas-locos-x-la-parrilla-locosxlaparrilla-Receta-pizza-pizza-receta-pizza-mozzarella-jamon-morrones-pizza-mozzarella-jamon-morrones-2.jpg);
     background-position: center;
 }
 
@@ -747,16 +755,21 @@ nav{
         height: 20rem;
     }
 
-    .contacto-container{
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
     .contacto-input{
         min-width: unset;
     }
 
-    .contacto-img{
-        margin-top: 2rem;
+    .contacto-columna{
+        min-width: 300px;
+        max-width: unset;
+    }
+
+    .productos-container .banner{
+        flex-direction: column;
+    }
+
+    .banner p{
+        margin-right: 0rem;
+        padding-right: 2rem;
     }
 }
